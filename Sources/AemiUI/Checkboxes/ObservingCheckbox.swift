@@ -10,9 +10,19 @@ import AemiUtilities
 
 public struct ObservingCheckbox<T>: View {
 
-    public let value: T
-    public let symbolProvider: (T) -> CheckboxSymbol?
-    public let backgroundStyleProvider: (T) -> any ShapeStyle
+    private let value: T
+    private let symbolProvider: (T) -> CheckboxSymbol?
+    private let backgroundStyleProvider: (T) -> any ShapeStyle
+    
+    public init(
+        value: T,
+        symbolProvider: @escaping (T) -> CheckboxSymbol?,
+        backgroundStyleProvider: @escaping (T) -> any ShapeStyle
+    ) {
+        self.value = value
+        self.symbolProvider = symbolProvider
+        self.backgroundStyleProvider = backgroundStyleProvider
+    }
 
     @ScaledMetric
     private var size: CGFloat = 24
