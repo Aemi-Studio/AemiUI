@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NativeToggleCheckboxStyle: ToggleStyle {
+public struct NativeToggleCheckboxStyle: ToggleStyle {
 
     @Environment(\.isEnabled) private var isEnabled
 
@@ -27,7 +27,7 @@ struct NativeToggleCheckboxStyle: ToggleStyle {
         }
     }
 
-    enum Placement: Sendable {
+    public enum Placement: Sendable {
         case leading
         case trailing
     }
@@ -64,7 +64,7 @@ struct NativeToggleCheckboxStyle: ToggleStyle {
         .padding(0)
     }
 
-    func makeBody(configuration: Configuration) -> some View {
+    public func makeBody(configuration: Configuration) -> some View {
         makePlacement(configuration: configuration)
             .contentShape(.rect)
             .onTapGesture {
@@ -93,11 +93,11 @@ struct NativeToggleCheckboxStyle: ToggleStyle {
 }
 
 extension ToggleStyle where Self == NativeToggleCheckboxStyle {
-    static var nativeCheckbox: some ToggleStyle {
+    public static var nativeCheckbox: some ToggleStyle {
         NativeToggleCheckboxStyle()
     }
 
-    static func nativeCheckbox(placement: Self.Placement = .leading, spacing: CGFloat? = nil) -> some ToggleStyle {
+    public static func nativeCheckbox(placement: Self.Placement = .leading, spacing: CGFloat? = nil) -> some ToggleStyle {
         NativeToggleCheckboxStyle(
             placement: placement,
             spacing: spacing

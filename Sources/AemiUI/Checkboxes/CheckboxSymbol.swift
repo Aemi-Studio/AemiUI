@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CheckboxSymbol: String, Sendable, CaseIterable {
+public enum CheckboxSymbol: String, Sendable, CaseIterable {
     case checkmark
     case xmark
     case minus
