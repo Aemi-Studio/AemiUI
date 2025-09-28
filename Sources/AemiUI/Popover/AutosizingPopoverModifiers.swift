@@ -25,14 +25,14 @@ public extension View {
             )
         )
     }
-    
+
     func autosizingPopover<Item>(
         item: Binding<Item?>,
         attachmentAnchor: PopoverAttachmentAnchor = .rect(.bounds),
         arrowEdge: Edge? = nil,
         fixedSize: FixedSize = .vertical,
         content: @escaping (Item) -> some View
-    ) -> some View where Item : Identifiable {
+    ) -> some View where Item: Identifiable {
         modifier(
             AutosizingPopoverItemContentModifier(
                 item: item,

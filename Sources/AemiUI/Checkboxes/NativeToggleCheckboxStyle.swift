@@ -8,7 +8,6 @@
 import SwiftUI
 
 public struct NativeToggleCheckboxStyle: ToggleStyle {
-
     @Environment(\.isEnabled) private var isEnabled
 
     private enum ToggleValue: Sendable {
@@ -89,15 +88,14 @@ public struct NativeToggleCheckboxStyle: ToggleStyle {
         case .mixed: Color.gray
         }
     }
-
 }
 
-extension ToggleStyle where Self == NativeToggleCheckboxStyle {
-    public static var nativeCheckbox: some ToggleStyle {
+public extension ToggleStyle where Self == NativeToggleCheckboxStyle {
+    static var nativeCheckbox: some ToggleStyle {
         NativeToggleCheckboxStyle()
     }
 
-    public static func nativeCheckbox(placement: Self.Placement = .leading, spacing: CGFloat? = nil) -> some ToggleStyle {
+    static func nativeCheckbox(placement: Self.Placement = .leading, spacing: CGFloat? = nil) -> some ToggleStyle {
         NativeToggleCheckboxStyle(
             placement: placement,
             spacing: spacing

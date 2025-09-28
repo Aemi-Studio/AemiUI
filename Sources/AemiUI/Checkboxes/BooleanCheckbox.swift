@@ -8,7 +8,6 @@
 import SwiftUI
 
 public struct BooleanCheckbox: View {
-
     @Binding private(set) var isOn: Bool
 
     private var tint: Color? {

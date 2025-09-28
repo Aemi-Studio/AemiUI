@@ -11,11 +11,11 @@ import SwiftUI
 struct AutosizingPopoverContentModifier<PopoverContent>: ViewModifier where PopoverContent: View {
     @Binding private(set) var isPresented: Bool
     private(set) var attachmentAnchor: PopoverAttachmentAnchor = .rect(.bounds)
-    private(set) var arrowEdge: Edge? = nil
+    private(set) var arrowEdge: Edge?
     private(set) var fixedSize: FixedSize = .vertical
     private(set) var adaptation: PresentationAdaptation = .none
     @ViewBuilder let popoverContent: () -> PopoverContent
-    
+
     private var horizontal: Bool { fixedSize == .horizontal || fixedSize == .both }
     private var vertical: Bool { fixedSize == .vertical || fixedSize == .both }
 
